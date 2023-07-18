@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from clientes.models import Cliente
-from clientes.validator import *
+from clientes.validators import *
 
 class ClienteSerializer(serializers.ModelSerializer):
     """Exibindo todos os clientes"""
