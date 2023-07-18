@@ -17,6 +17,8 @@ class ClienteSerializer(serializers.ModelSerializer):
             errors['nome'] = "Não inclua números neste campo."
         if not rg_valido(data['rg']):
             errors['rg'] = "O RG deve ter 9 dígitos."
+        if not celular_valido(data['celular']):
+            errors['celular'] = "O número de celular deve seguir este padrão: 11 91234-1234, respeitando os espaços e traço."
 
         if errors:
             raise serializers.ValidationError(errors)
